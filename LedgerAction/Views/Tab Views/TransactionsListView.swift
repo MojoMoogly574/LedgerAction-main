@@ -35,18 +35,20 @@ struct TransactionsListView: View {
                                 showFilterView = true
                                 HapticManager.notification(type: .success)
                             } label: {
-                                Text("Select Range:   \(format(date: startDate,format: "dd MMM yy"))   -   \(format(date: endDate,format: "dd MMM yy"))")
+                                Text("     Select Range:          \(format(date: startDate,format: "dd MMM yy"))   -   \(format(date: endDate,format: "dd MMM yy"))")
                                     .font(.callout)
                                     .fontWeight(.bold)
                                     .foregroundStyle(.primary)
                             }
                             .hSpacing(.leading)
-                            .padding(5)
+                            .padding(6)
                             .background {///date range button rectangle
                                 RoundedRectangle(cornerRadius: 5, style: .continuous)
-                                    .fill(.colorTitanium)
-                                    .shadow(color: .colorTitanium, radius: 4, x: 2, y: 2)
+                                    .fill(.colorGrey)
+                                    .shadow(color: .primary, radius: 4, x: 2, y: 2)
                             }
+                            .padding(.horizontal)
+                           Divider()
                             FilterTransactionsView(startDate: startDate, endDate: endDate) { transactions in
                                 /// HEADER CARD VIEW
                                 CardView(income: 2039, expense: 1764)
@@ -60,6 +62,7 @@ struct TransactionsListView: View {
                                 .padding(.horizontal, 5)
                             }
                             .pickerStyle(.segmented)
+                            Divider()
                             FilterTransactionsView(startDate: startDate, endDate: endDate, category: selectedCategory) { transactions in
                                 ForEach(transactions) { transaction in
                                     TransactionCardView(transaction: transaction)
