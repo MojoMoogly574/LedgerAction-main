@@ -1,0 +1,764 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		12090BC32B84F829007371F1 /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12090BC22B84F829007371F1 /* LockView.swift */; };
+		12090BC52B8505AA007371F1 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12090BC42B8505AA007371F1 /* Tab.swift */; };
+		12090BC72B8661EF007371F1 /* EditTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12090BC62B8661EF007371F1 /* EditTransactionView.swift */; };
+		12090BC92B86676F007371F1 /* TabShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12090BC82B86676F007371F1 /* TabShape.swift */; };
+		12090BCB2B866798007371F1 /* TabPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12090BCA2B866798007371F1 /* TabPosition.swift */; };
+		124A33C12B83E637007707E0 /* LedgerActionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A33C02B83E637007707E0 /* LedgerActionApp.swift */; };
+		124A33C32B83E637007707E0 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A33C22B83E637007707E0 /* TabBarView.swift */; };
+		124A33C52B83E638007707E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 124A33C42B83E638007707E0 /* Assets.xcassets */; };
+		124A33C92B83E638007707E0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 124A33C82B83E638007707E0 /* Preview Assets.xcassets */; };
+		124A33D32B83E638007707E0 /* LedgerActionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A33D22B83E638007707E0 /* LedgerActionTests.swift */; };
+		124A33DD2B83E638007707E0 /* LedgerActionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A33DC2B83E638007707E0 /* LedgerActionUITests.swift */; };
+		124A33DF2B83E638007707E0 /* LedgerActionUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A33DE2B83E638007707E0 /* LedgerActionUITestsLaunchTests.swift */; };
+		124A33F92B83EC49007707E0 /* TransactionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A33F82B83EC49007707E0 /* TransactionsListView.swift */; };
+		124A33FB2B83EC56007707E0 /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A33FA2B83EC56007707E0 /* BudgetView.swift */; };
+		124A33FD2B83F132007707E0 /* IntroScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A33FC2B83F132007707E0 /* IntroScreen.swift */; };
+		124A33FF2B83F7A5007707E0 /* BillsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A33FE2B83F7A5007707E0 /* BillsView.swift */; };
+		124A34012B83F8F3007707E0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A34002B83F8F3007707E0 /* Constants.swift */; };
+		124A34052B83F9A0007707E0 /* TintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A34042B83F9A0007707E0 /* TintColor.swift */; };
+		124A34072B83FCF1007707E0 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A34062B83FCF1007707E0 /* Category.swift */; };
+		124A34092B83FD4D007707E0 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A34082B83FD4D007707E0 /* Transaction.swift */; };
+		124A340F2B84052D007707E0 /* Views+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A340E2B84052D007707E0 /* Views+Extension.swift */; };
+		124A34142B842987007707E0 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A34132B842987007707E0 /* Date+Extension.swift */; };
+		124A34162B842B71007707E0 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A34152B842B71007707E0 /* HapticsManager.swift */; };
+		124A34182B84373D007707E0 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A34172B84373D007707E0 /* CardView.swift */; };
+		124A341A2B845020007707E0 /* TransactionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A34192B845020007707E0 /* TransactionCardView.swift */; };
+		124A341C2B845060007707E0 /* SwipeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A341B2B845060007707E0 /* SwipeAction.swift */; };
+		124A341E2B84601E007707E0 /* FilterTransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A341D2B84601E007707E0 /* FilterTransactionsView.swift */; };
+		124A34202B8465CC007707E0 /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A341F2B8465CC007707E0 /* AddTransactionView.swift */; };
+		124A34222B8466FE007707E0 /* DateFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A34212B8466FE007707E0 /* DateFilterView.swift */; };
+		124A34242B847999007707E0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A34232B847999007707E0 /* SettingsView.swift */; };
+		124A34262B847B2E007707E0 /* CustomShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A34252B847B2E007707E0 /* CustomShareSheet.swift */; };
+		124A34282B847C12007707E0 /* ThemeChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A34272B847C12007707E0 /* ThemeChangeView.swift */; };
+		124A342A2B847C58007707E0 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A34292B847C58007707E0 /* LoadingView.swift */; };
+		124A342C2B847D1B007707E0 /* NotificationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A342B2B847D1B007707E0 /* NotificationState.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		124A33CF2B83E638007707E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 124A33B52B83E637007707E0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 124A33BC2B83E637007707E0;
+			remoteInfo = LedgerAction;
+		};
+		124A33D92B83E638007707E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 124A33B52B83E637007707E0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 124A33BC2B83E637007707E0;
+			remoteInfo = LedgerAction;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		12090BC22B84F829007371F1 /* LockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
+		12090BC42B8505AA007371F1 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		12090BC62B8661EF007371F1 /* EditTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTransactionView.swift; sourceTree = "<group>"; };
+		12090BC82B86676F007371F1 /* TabShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabShape.swift; sourceTree = "<group>"; };
+		12090BCA2B866798007371F1 /* TabPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPosition.swift; sourceTree = "<group>"; };
+		124A33BD2B83E637007707E0 /* LedgerAction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LedgerAction.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		124A33C02B83E637007707E0 /* LedgerActionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedgerActionApp.swift; sourceTree = "<group>"; };
+		124A33C22B83E637007707E0 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		124A33C42B83E638007707E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		124A33C62B83E638007707E0 /* LedgerAction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LedgerAction.entitlements; sourceTree = "<group>"; };
+		124A33C82B83E638007707E0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		124A33CE2B83E638007707E0 /* LedgerActionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LedgerActionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		124A33D22B83E638007707E0 /* LedgerActionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedgerActionTests.swift; sourceTree = "<group>"; };
+		124A33D82B83E638007707E0 /* LedgerActionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LedgerActionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		124A33DC2B83E638007707E0 /* LedgerActionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedgerActionUITests.swift; sourceTree = "<group>"; };
+		124A33DE2B83E638007707E0 /* LedgerActionUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedgerActionUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		124A33F82B83EC49007707E0 /* TransactionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListView.swift; sourceTree = "<group>"; };
+		124A33FA2B83EC56007707E0 /* BudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetView.swift; sourceTree = "<group>"; };
+		124A33FC2B83F132007707E0 /* IntroScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroScreen.swift; sourceTree = "<group>"; };
+		124A33FE2B83F7A5007707E0 /* BillsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsView.swift; sourceTree = "<group>"; };
+		124A34002B83F8F3007707E0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		124A34042B83F9A0007707E0 /* TintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TintColor.swift; sourceTree = "<group>"; };
+		124A34062B83FCF1007707E0 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		124A34082B83FD4D007707E0 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		124A340E2B84052D007707E0 /* Views+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views+Extension.swift"; sourceTree = "<group>"; };
+		124A34132B842987007707E0 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		124A34152B842B71007707E0 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		124A34172B84373D007707E0 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		124A34192B845020007707E0 /* TransactionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCardView.swift; sourceTree = "<group>"; };
+		124A341B2B845060007707E0 /* SwipeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeAction.swift; sourceTree = "<group>"; };
+		124A341D2B84601E007707E0 /* FilterTransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTransactionsView.swift; sourceTree = "<group>"; };
+		124A341F2B8465CC007707E0 /* AddTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
+		124A34212B8466FE007707E0 /* DateFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFilterView.swift; sourceTree = "<group>"; };
+		124A34232B847999007707E0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		124A34252B847B2E007707E0 /* CustomShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShareSheet.swift; sourceTree = "<group>"; };
+		124A34272B847C12007707E0 /* ThemeChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeChangeView.swift; sourceTree = "<group>"; };
+		124A34292B847C58007707E0 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		124A342B2B847D1B007707E0 /* NotificationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationState.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		124A33BA2B83E637007707E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		124A33CB2B83E638007707E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		124A33D52B83E638007707E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		124A33B42B83E637007707E0 = {
+			isa = PBXGroup;
+			children = (
+				124A33C02B83E637007707E0 /* LedgerActionApp.swift */,
+				124A33BF2B83E637007707E0 /* LedgerAction */,
+				124A33D12B83E638007707E0 /* LedgerActionTests */,
+				124A33DB2B83E638007707E0 /* LedgerActionUITests */,
+				124A33BE2B83E637007707E0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		124A33BE2B83E637007707E0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				124A33BD2B83E637007707E0 /* LedgerAction.app */,
+				124A33CE2B83E638007707E0 /* LedgerActionTests.xctest */,
+				124A33D82B83E638007707E0 /* LedgerActionUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		124A33BF2B83E637007707E0 /* LedgerAction */ = {
+			isa = PBXGroup;
+			children = (
+				124A33ED2B83E739007707E0 /* Other */,
+				124A33EB2B83E72D007707E0 /* Models */,
+				124A33EC2B83E734007707E0 /* Views */,
+				124A33C42B83E638007707E0 /* Assets.xcassets */,
+				124A33C62B83E638007707E0 /* LedgerAction.entitlements */,
+				124A33C72B83E638007707E0 /* Preview Content */,
+			);
+			path = LedgerAction;
+			sourceTree = "<group>";
+		};
+		124A33C72B83E638007707E0 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				124A33C82B83E638007707E0 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		124A33D12B83E638007707E0 /* LedgerActionTests */ = {
+			isa = PBXGroup;
+			children = (
+				124A33D22B83E638007707E0 /* LedgerActionTests.swift */,
+			);
+			path = LedgerActionTests;
+			sourceTree = "<group>";
+		};
+		124A33DB2B83E638007707E0 /* LedgerActionUITests */ = {
+			isa = PBXGroup;
+			children = (
+				124A33DC2B83E638007707E0 /* LedgerActionUITests.swift */,
+				124A33DE2B83E638007707E0 /* LedgerActionUITestsLaunchTests.swift */,
+			);
+			path = LedgerActionUITests;
+			sourceTree = "<group>";
+		};
+		124A33EB2B83E72D007707E0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				124A34062B83FCF1007707E0 /* Category.swift */,
+				124A34082B83FD4D007707E0 /* Transaction.swift */,
+				124A342B2B847D1B007707E0 /* NotificationState.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		124A33EC2B83E734007707E0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				124A34292B847C58007707E0 /* LoadingView.swift */,
+				124A34122B841E81007707E0 /* Tab Views */,
+				124A33C22B83E637007707E0 /* TabBarView.swift */,
+				124A33FC2B83F132007707E0 /* IntroScreen.swift */,
+				124A34172B84373D007707E0 /* CardView.swift */,
+				124A34192B845020007707E0 /* TransactionCardView.swift */,
+				124A341D2B84601E007707E0 /* FilterTransactionsView.swift */,
+				124A341F2B8465CC007707E0 /* AddTransactionView.swift */,
+				12090BC62B8661EF007371F1 /* EditTransactionView.swift */,
+				124A34212B8466FE007707E0 /* DateFilterView.swift */,
+				124A34232B847999007707E0 /* SettingsView.swift */,
+				12090BC22B84F829007371F1 /* LockView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		124A33ED2B83E739007707E0 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				124A34002B83F8F3007707E0 /* Constants.swift */,
+				124A34042B83F9A0007707E0 /* TintColor.swift */,
+				124A340E2B84052D007707E0 /* Views+Extension.swift */,
+				124A34132B842987007707E0 /* Date+Extension.swift */,
+				124A34152B842B71007707E0 /* HapticsManager.swift */,
+				124A341B2B845060007707E0 /* SwipeAction.swift */,
+				124A34252B847B2E007707E0 /* CustomShareSheet.swift */,
+				124A34272B847C12007707E0 /* ThemeChangeView.swift */,
+				12090BC42B8505AA007371F1 /* Tab.swift */,
+				12090BC82B86676F007371F1 /* TabShape.swift */,
+				12090BCA2B866798007371F1 /* TabPosition.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		124A34122B841E81007707E0 /* Tab Views */ = {
+			isa = PBXGroup;
+			children = (
+				124A33FA2B83EC56007707E0 /* BudgetView.swift */,
+				124A33FE2B83F7A5007707E0 /* BillsView.swift */,
+				124A33F82B83EC49007707E0 /* TransactionsListView.swift */,
+			);
+			path = "Tab Views";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		124A33BC2B83E637007707E0 /* LedgerAction */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 124A33E22B83E638007707E0 /* Build configuration list for PBXNativeTarget "LedgerAction" */;
+			buildPhases = (
+				124A33B92B83E637007707E0 /* Sources */,
+				124A33BA2B83E637007707E0 /* Frameworks */,
+				124A33BB2B83E637007707E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LedgerAction;
+			productName = LedgerAction;
+			productReference = 124A33BD2B83E637007707E0 /* LedgerAction.app */;
+			productType = "com.apple.product-type.application";
+		};
+		124A33CD2B83E638007707E0 /* LedgerActionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 124A33E52B83E638007707E0 /* Build configuration list for PBXNativeTarget "LedgerActionTests" */;
+			buildPhases = (
+				124A33CA2B83E638007707E0 /* Sources */,
+				124A33CB2B83E638007707E0 /* Frameworks */,
+				124A33CC2B83E638007707E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				124A33D02B83E638007707E0 /* PBXTargetDependency */,
+			);
+			name = LedgerActionTests;
+			productName = LedgerActionTests;
+			productReference = 124A33CE2B83E638007707E0 /* LedgerActionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		124A33D72B83E638007707E0 /* LedgerActionUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 124A33E82B83E638007707E0 /* Build configuration list for PBXNativeTarget "LedgerActionUITests" */;
+			buildPhases = (
+				124A33D42B83E638007707E0 /* Sources */,
+				124A33D52B83E638007707E0 /* Frameworks */,
+				124A33D62B83E638007707E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				124A33DA2B83E638007707E0 /* PBXTargetDependency */,
+			);
+			name = LedgerActionUITests;
+			productName = LedgerActionUITests;
+			productReference = 124A33D82B83E638007707E0 /* LedgerActionUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		124A33B52B83E637007707E0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					124A33BC2B83E637007707E0 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					124A33CD2B83E638007707E0 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 124A33BC2B83E637007707E0;
+					};
+					124A33D72B83E638007707E0 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 124A33BC2B83E637007707E0;
+					};
+				};
+			};
+			buildConfigurationList = 124A33B82B83E637007707E0 /* Build configuration list for PBXProject "LedgerAction" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 124A33B42B83E637007707E0;
+			productRefGroup = 124A33BE2B83E637007707E0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				124A33BC2B83E637007707E0 /* LedgerAction */,
+				124A33CD2B83E638007707E0 /* LedgerActionTests */,
+				124A33D72B83E638007707E0 /* LedgerActionUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		124A33BB2B83E637007707E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				124A33C92B83E638007707E0 /* Preview Assets.xcassets in Resources */,
+				124A33C52B83E638007707E0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		124A33CC2B83E638007707E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		124A33D62B83E638007707E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		124A33B92B83E637007707E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				124A34162B842B71007707E0 /* HapticsManager.swift in Sources */,
+				124A34202B8465CC007707E0 /* AddTransactionView.swift in Sources */,
+				124A34092B83FD4D007707E0 /* Transaction.swift in Sources */,
+				124A34222B8466FE007707E0 /* DateFilterView.swift in Sources */,
+				124A341A2B845020007707E0 /* TransactionCardView.swift in Sources */,
+				124A34012B83F8F3007707E0 /* Constants.swift in Sources */,
+				124A341E2B84601E007707E0 /* FilterTransactionsView.swift in Sources */,
+				12090BCB2B866798007371F1 /* TabPosition.swift in Sources */,
+				12090BC52B8505AA007371F1 /* Tab.swift in Sources */,
+				12090BC72B8661EF007371F1 /* EditTransactionView.swift in Sources */,
+				124A342A2B847C58007707E0 /* LoadingView.swift in Sources */,
+				124A33FB2B83EC56007707E0 /* BudgetView.swift in Sources */,
+				124A34182B84373D007707E0 /* CardView.swift in Sources */,
+				124A34052B83F9A0007707E0 /* TintColor.swift in Sources */,
+				12090BC92B86676F007371F1 /* TabShape.swift in Sources */,
+				124A33C32B83E637007707E0 /* TabBarView.swift in Sources */,
+				124A342C2B847D1B007707E0 /* NotificationState.swift in Sources */,
+				124A33FD2B83F132007707E0 /* IntroScreen.swift in Sources */,
+				124A34142B842987007707E0 /* Date+Extension.swift in Sources */,
+				124A340F2B84052D007707E0 /* Views+Extension.swift in Sources */,
+				124A33F92B83EC49007707E0 /* TransactionsListView.swift in Sources */,
+				124A34282B847C12007707E0 /* ThemeChangeView.swift in Sources */,
+				124A34072B83FCF1007707E0 /* Category.swift in Sources */,
+				124A33C12B83E637007707E0 /* LedgerActionApp.swift in Sources */,
+				124A34262B847B2E007707E0 /* CustomShareSheet.swift in Sources */,
+				124A34242B847999007707E0 /* SettingsView.swift in Sources */,
+				12090BC32B84F829007371F1 /* LockView.swift in Sources */,
+				124A33FF2B83F7A5007707E0 /* BillsView.swift in Sources */,
+				124A341C2B845060007707E0 /* SwipeAction.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		124A33CA2B83E638007707E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				124A33D32B83E638007707E0 /* LedgerActionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		124A33D42B83E638007707E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				124A33DD2B83E638007707E0 /* LedgerActionUITests.swift in Sources */,
+				124A33DF2B83E638007707E0 /* LedgerActionUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		124A33D02B83E638007707E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 124A33BC2B83E637007707E0 /* LedgerAction */;
+			targetProxy = 124A33CF2B83E638007707E0 /* PBXContainerItemProxy */;
+		};
+		124A33DA2B83E638007707E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 124A33BC2B83E637007707E0 /* LedgerAction */;
+			targetProxy = 124A33D92B83E638007707E0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		124A33E02B83E638007707E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		124A33E12B83E638007707E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		124A33E32B83E638007707E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LedgerAction/LedgerAction.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LedgerAction/Preview Content\"";
+				DEVELOPMENT_TEAM = 8QQYNTY523;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Privacy of Transactions";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.weldtactics.LedgerAction;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		124A33E42B83E638007707E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LedgerAction/LedgerAction.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LedgerAction/Preview Content\"";
+				DEVELOPMENT_TEAM = 8QQYNTY523;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Privacy of Transactions";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.weldtactics.LedgerAction;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		124A33E62B83E638007707E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8QQYNTY523;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.weldtactics.LedgerActionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LedgerAction.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LedgerAction";
+			};
+			name = Debug;
+		};
+		124A33E72B83E638007707E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8QQYNTY523;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.weldtactics.LedgerActionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LedgerAction.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LedgerAction";
+			};
+			name = Release;
+		};
+		124A33E92B83E638007707E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8QQYNTY523;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.weldtactics.LedgerActionUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LedgerAction;
+			};
+			name = Debug;
+		};
+		124A33EA2B83E638007707E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8QQYNTY523;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.weldtactics.LedgerActionUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LedgerAction;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		124A33B82B83E637007707E0 /* Build configuration list for PBXProject "LedgerAction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				124A33E02B83E638007707E0 /* Debug */,
+				124A33E12B83E638007707E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		124A33E22B83E638007707E0 /* Build configuration list for PBXNativeTarget "LedgerAction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				124A33E32B83E638007707E0 /* Debug */,
+				124A33E42B83E638007707E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		124A33E52B83E638007707E0 /* Build configuration list for PBXNativeTarget "LedgerActionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				124A33E62B83E638007707E0 /* Debug */,
+				124A33E72B83E638007707E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		124A33E82B83E638007707E0 /* Build configuration list for PBXNativeTarget "LedgerActionUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				124A33E92B83E638007707E0 /* Debug */,
+				124A33EA2B83E638007707E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 124A33B52B83E637007707E0 /* Project object */;
+}
