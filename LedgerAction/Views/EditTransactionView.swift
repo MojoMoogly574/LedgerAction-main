@@ -81,6 +81,8 @@ struct EditTransactionView: View {
                                 .padding(.vertical, 12)
                                 .background(.background, in: .rect(cornerRadius: 10))
                         })
+                        Divider()
+                            .padding(.bottom, 15)
                         //Receipts
                         Text("Receipt:  ")
                             .font(.body)
@@ -97,15 +99,16 @@ struct EditTransactionView: View {
                                         Image(uiImage: uiImage)
                                             .resizable()
                                             .scaledToFit()
+                                            .background{
+                                                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                                    .fill(.colorGrey)
+                                                    .frame(width: 160, height: 255)
+                                            }
                                     } else {
                                         Image(systemName: "photo")
                                             .resizable()
                                             .scaledToFill()
-                                            .tint(.colorTitanium)
-                                            .background{
-                                                Rectangle()
-                                                    .fill(.secondary)
-                                            }
+                                            .tint(.secondary)
                                     }
                                 }
                                 .frame(width: 150, height: 200)

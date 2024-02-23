@@ -21,7 +21,7 @@ struct TransactionsListView: View {
     @State private var selectedTransaction: Transaction?
     /// For Animation
     @Namespace private var animation
-//    @Query(sort: [SortDescriptor(\Transaction.dateAdded, order: .reverse)], animation: .snappy) private var transactions: [Transaction]
+   
     var body: some View {
         GeometryReader{
             let size = $0.size
@@ -31,23 +31,22 @@ struct TransactionsListView: View {
                         //MARK: BODY
                         Section {
                             /// DATE RANGE FILTER BUTTON
-                                Button {
-                                    showFilterView = true
-                                    HapticManager.notification(type: .success)
-                                } label: {
-                                    Text("Select Range:   \(format(date: startDate,format: "dd MMM yy"))   -   \(format(date: endDate,format: "dd MMM yy"))")
-                                        .font(.callout)
-                                        .fontWeight(.bold)
-                                        .foregroundStyle(.primary)
+                            Button {
+                                showFilterView = true
+                                HapticManager.notification(type: .success)
+                            } label: {
+                                Text("Select Range:   \(format(date: startDate,format: "dd MMM yy"))   -   \(format(date: endDate,format: "dd MMM yy"))")
+                                    .font(.callout)
+                                    .fontWeight(.bold)
+                                    .foregroundStyle(.primary)
                             }
-                                .hSpacing(.leading)
-                                .padding(5)
+                            .hSpacing(.leading)
+                            .padding(5)
                             .background {///date range button rectangle
                                 RoundedRectangle(cornerRadius: 5, style: .continuous)
                                     .fill(.colorTitanium)
                                     .shadow(color: .colorTitanium, radius: 4, x: 2, y: 2)
                             }
-                            
                             FilterTransactionsView(startDate: startDate, endDate: endDate) { transactions in
                                 /// HEADER CARD VIEW
                                 CardView(income: 2039, expense: 1764)
@@ -61,7 +60,6 @@ struct TransactionsListView: View {
                                 .padding(.horizontal, 5)
                             }
                             .pickerStyle(.segmented)
-                            
                             FilterTransactionsView(startDate: startDate, endDate: endDate, category: selectedCategory) { transactions in
                                 ForEach(transactions) { transaction in
                                     TransactionCardView(transaction: transaction)
@@ -77,7 +75,6 @@ struct TransactionsListView: View {
                                 VStack(alignment: .leading, spacing: 5, content: {
                                     Text("Welcome!")
                                         .font(.title.bold())
-                                    
                                     if !userName.isEmpty {
                                         Text(userName)
                                             .font(.callout)
@@ -90,7 +87,7 @@ struct TransactionsListView: View {
                                 }
                                 Spacer(minLength: 0)
                                 Button {
-                                   addTransaction = true
+                                    addTransaction = true
                                     HapticManager.notification(type: .success)
                                 } label: {
                                     Image(systemName: "plus")
@@ -130,26 +127,25 @@ struct TransactionsListView: View {
                 }
             }
             .overlay {
-                    if showFilterView {
-                        DateFilterView(start: startDate, end: endDate, onSubmit: {start, end in
-                            startDate = start
-                            endDate = end
-                            showFilterView = false
-                        }, onClose: {
-                            showFilterView = false
-                        })
-                        .transition(.move(edge: .leading))
-                    }
+                if showFilterView {
+                    DateFilterView(start: startDate, end: endDate, onSubmit: {start, end in
+                        startDate = start
+                        endDate = end
+                        showFilterView = false
+                    }, onClose: {
+                        showFilterView = false
+                    })
+                    .transition(.move(edge: .leading))
                 }
-                .animation(.snappy, value: showFilterView)
             }
+            .animation(.snappy, value: showFilterView)
         }
+    }
     //MARK:  FUNCTIONS
     func headerBGOpacity(_ proxy: GeometryProxy) -> CGFloat {
         let minY = proxy.frame(in: .scrollView).minY + safeArea.top
         return minY > 0 ? 0 : (-minY / 15)
     }
-    
     func headerScale(_ size: CGSize, proxy: GeometryProxy) -> CGFloat {
         let minY = proxy.frame(in: .scrollView).minY
         let screenHeight = size.height
@@ -159,7 +155,7 @@ struct TransactionsListView: View {
         
         return 1 + scale
     }
-        }
+}
 
 
 #Preview {
