@@ -38,7 +38,7 @@ struct TransactionsListView: View {
                                     Text("Select Range:   \(format(date: startDate,format: "dd MMM yy"))   -   \(format(date: endDate,format: "dd MMM yy"))")
                                         .font(.callout)
                                         .fontWeight(.bold)
-                                        .foregroundStyle(.colorBlue)
+                                        .foregroundStyle(.primary)
                             }
                                 .hSpacing(.leading)
                                 .padding(5)

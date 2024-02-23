@@ -82,7 +82,7 @@ struct EditTransactionView: View {
                                 .background(.background, in: .rect(cornerRadius: 10))
                         })
                         //Receipts
-                        Text("Receipts:  ")
+                        Text("Receipt:  ")
                             .font(.body)
                             .fontWeight(.bold)
                             .foregroundStyle(.colorGrey)
@@ -100,19 +100,27 @@ struct EditTransactionView: View {
                                     } else {
                                         Image(systemName: "photo")
                                             .resizable()
-                                            .scaledToFit()
+                                            .scaledToFill()
                                             .tint(.colorTitanium)
+                                            .background{
+                                                Rectangle()
+                                                    .fill(.secondary)
+                                            }
                                     }
                                 }
-                                .frame(width: 100, height: 200)
+                                .frame(width: 150, height: 200)
                                 .overlay(alignment: .topTrailing) {
                                     if selectedReceiptData != nil {
                                         Button {
                                             selectedReceipt = nil
                                             selectedReceiptData = nil
                                         } label: {
-                                            Image(systemName: "x.circle.fill")
-                                                .foregroundStyle(.red)
+                                            Image(systemName: "x.square")
+                                                .resizable()
+                                                .font(.callout)
+                                                .fontWeight(.bold)
+                                                .frame(width: 25, height: 25)
+                                                .foregroundStyle(.white)
                                         }
                                     }
                                 }
@@ -121,7 +129,6 @@ struct EditTransactionView: View {
                 }
                 .ignoresSafeArea()
                 .padding()
-                .background(.gray.opacity(0.15))
                 .navigationTitle("Edit Transaction")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar(content: {

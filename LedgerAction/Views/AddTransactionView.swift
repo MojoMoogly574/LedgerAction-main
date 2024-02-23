@@ -46,12 +46,6 @@ struct AddTransactionView: View {
                                 .font(.caption)
                                 .foregroundStyle(.gray)
                             CategoryCheckBox()
-                        //Photo Picker
-                            Text("Receipt")
-                                .font(.caption)
-                                .foregroundStyle(.gray)
-                                .hSpacing(.center)
-                            
                                     }
                                 }
                     HStack(spacing: 4) {
