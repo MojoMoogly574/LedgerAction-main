@@ -26,9 +26,7 @@ struct AddTransactionView: View {
     @State private var amount: Double = .zero
     @State private var dateAdded: Date = .now
     @State private var category: Category = .expense
-//    ///Photo Picker Properties
-//    @State private var selectedReceipt: PhotosPickerItem?
-//    @State private var selectedReceiptData: Data?
+
     /// Random Tint
     @State var tint: TintColor = tints.randomElement()!
     
@@ -84,6 +82,19 @@ struct AddTransactionView: View {
             .navigationTitle("\(editTransaction == nil ? "Add" : "Edit") Transaction")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar(content: {
+                ToolbarItem(placement: .topBarLeading){
+                    Button{
+                        HapticManager.notification(type: .success)
+                        dismiss()
+                    }label: {
+                        Text("Cancel")
+                    }
+                    .buttonStyle(.bordered)
+                    .fontWeight(.bold)
+                    .foregroundStyle(.colorRed)
+                    .tint(.gray)
+                }
+
                 ToolbarItem(placement: .topBarTrailing){
                     Button{
                         HapticManager.notification(type: .success)
@@ -173,26 +184,29 @@ struct AddTransactionView: View {
     /// Custom CheckBox
     @ViewBuilder
     func CategoryCheckBox() -> some View {
-        HStack(spacing: 10) {
+        HStack(spacing: 2) {
             ForEach(Category.allCases, id: \.rawValue) { category in
-                HStack(spacing: 5) {
-                    ZStack {
-                        Image(systemName: "circle")
-                            .font(.title)
-                            .foregroundStyle(appTint)
-                        if self.category == category {
-                            Image(systemName: "circle.fill")
-                                .font(.headline)
+                HStack(spacing: 2) {
+                    LazyVStack{
+                        ZStack {
+                            Image(systemName: "circle")
+                                .font(.title3)
                                 .foregroundStyle(appTint)
+                            if self.category == category {
+                                Image(systemName: "circle.fill")
+                                    .font(.caption2)
+                                    .foregroundStyle(appTint)
+                            }
                         }
-                    }
-                    Text(category.rawValue)
-                        .font(.title3)
-                }.hSpacing(.leading)
-                .contentShape(.rect)
-                .foregroundStyle(.colorGrey)
-                .onTapGesture {
-                    self.category = category
+                        Text(category.rawValue)
+                            .font(.footnote)
+                    }.hSpacing(.leading)
+                    
+                        .contentShape(.rect)
+                        .foregroundStyle(.colorGrey)
+                        .onTapGesture {
+                            self.category = category
+                        }
                 }
             }
           

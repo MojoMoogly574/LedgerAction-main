@@ -235,35 +235,38 @@ struct EditTransactionView: View {
                     .background(.background, in: .rect(cornerRadius: 10))
             })
         }
-        /// Custom CheckBox
-        @ViewBuilder
-        func CategoryCheckBox() -> some View {
-            HStack(spacing: 10) {
-                ForEach(Category.allCases, id: \.rawValue) { category in
-                    HStack(spacing: 5) {
+    /// Custom CheckBox
+    @ViewBuilder
+    func CategoryCheckBox() -> some View {
+        HStack(spacing: 2) {
+            ForEach(Category.allCases, id: \.rawValue) { category in
+                HStack(spacing: 2) {
+                    LazyVStack{
                         ZStack {
                             Image(systemName: "circle")
-                                .font(.title)
+                                .font(.title3)
                                 .foregroundStyle(appTint)
                             if self.category == category {
                                 Image(systemName: "circle.fill")
-                                    .font(.subheadline)
-                                    .fontWeight(.bold)
+                                    .font(.caption2)
                                     .foregroundStyle(appTint)
                             }
                         }
                         Text(category.rawValue)
-                            .font(.title3)
-                            .fontWeight(.bold)
-                            .foregroundStyle(.colorGrey)
-                    }
-                    .contentShape(.rect)
-                    .onTapGesture {
-                        self.category = category
-                    }
+                            .font(.footnote)
+                    }.hSpacing(.leading)
+                    
+                        .contentShape(.rect)
+                        .foregroundStyle(.colorGrey)
+                        .onTapGesture {
+                            self.category = category
+                        }
                 }
             }
+          
         }
+      
+    }
         /// Notification Toggle
         @ViewBuilder
         func NotificationToggle() -> some View {

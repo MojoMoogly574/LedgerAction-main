@@ -35,23 +35,29 @@ struct TransactionsListView: View {
                                 showFilterView = true
                                 HapticManager.notification(type: .success)
                             } label: {
-                                Text("     Select Range:          \(format(date: startDate,format: "dd MMM yy"))   -   \(format(date: endDate,format: "dd MMM yy"))")
+                                Text(" Select Range:  \(format(date: startDate,format: "dd MMM yy"))   -   \(format(date: endDate,format: "dd MMM yy"))")
                                     .font(.callout)
                                     .fontWeight(.bold)
-                                    .foregroundStyle(.primary)
+                                    .foregroundStyle(.black)
+                                    .padding(8)
                             }
                             .hSpacing(.leading)
-                            .padding(6)
+                           
                             .background {///date range button rectangle
                                 RoundedRectangle(cornerRadius: 5, style: .continuous)
-                                    .fill(.colorGrey)
+                                    .fill(.colorTitanium)
                                     .shadow(color: .primary, radius: 4, x: 2, y: 2)
                             }
                             .padding(.horizontal)
                            Divider()
                             FilterTransactionsView(startDate: startDate, endDate: endDate) { transactions in
                                 /// HEADER CARD VIEW
-                                CardView(income: 2039, expense: 1764)
+                                CardView( 
+                                    income: total(transactions, category: .income),
+                                    expense: total(transactions, category: .expense), 
+                                    savings: total(transactions, category: .savings), 
+                                    investments: total(transactions, category: .investment)
+                                      )
                                 ///  CATEGORY SEGMENTED PICKER
                                 Picker("", selection: $selectedCategory) {
                                     ForEach(Category.allCases, id: \.rawValue) { category in

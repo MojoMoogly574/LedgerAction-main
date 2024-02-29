@@ -48,7 +48,11 @@ extension View {
         
         return locale.currencySymbol ?? ""
     }
-    
+    func savingsTotal(_ transactions: [Transaction], category: Category) -> Double {
+        return transactions.lazy.filter({ $0.category == category.rawValue }).lazy.reduce(Double.zero) { partialResult, transaction in
+            return partialResult + transaction.amount
+        }
+    }
     func total(_ transactions: [Transaction], category: Category) -> Double {
         return transactions.lazy.filter({ $0.category == category.rawValue }).lazy.reduce(Double.zero) { partialResult, transaction in
             return partialResult + transaction.amount
