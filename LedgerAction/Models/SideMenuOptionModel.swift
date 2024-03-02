@@ -8,9 +8,9 @@
 import Foundation
 
 
-enum SideMenuOptionalModel: Int, CaseIterable {
+enum SideMenuRowType: Int, CaseIterable {
     
-    case profile
+    case profile = 0
     case dashboard
     case transactions
     case budget
@@ -46,6 +46,6 @@ enum SideMenuOptionalModel: Int, CaseIterable {
         }
     }
 }
-extension SideMenuOptionalModel: Identifiable {
+extension SideMenuRowType: Identifiable {
     var id: Int { self.rawValue }
 }

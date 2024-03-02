@@ -17,12 +17,14 @@ struct TransactionsListView: View {
     @State private var endDate: Date = .now.endOfMonth
     @State private var showFilterView: Bool = false
     @State private var addTransaction: Bool = false
-    @State private var showSideMenu: Bool = false
+    @State private var showSideMenu = false
     @State private var selectedCategory: Category = .expense
     @State private var selectedTransaction: Transaction?
+    @State private var selectedTab = 0
+    
     /// For Animation
     @Namespace private var animation
-   
+    
     var body: some View {
         GeometryReader{
             let size = $0.size
@@ -83,10 +85,10 @@ struct TransactionsListView: View {
                             } header: {
                                 //MARK:  HEADER VIEW
                                 HStack(spacing: 10) {
-                                    Button {
+                                    Button(action: {
                                         showSideMenu.toggle()
                                         HapticManager.notification(type: .success)
-                                    } label: {
+                                    }, label: {
                                         Image(systemName: "line.3.horizontal")
                                             .font(.title3)
                                             .fontWeight(.semibold)
@@ -94,11 +96,11 @@ struct TransactionsListView: View {
                                             .frame(width: 45, height: 45)
                                             .background(appTint.gradient, in: .circle)
                                             .contentShape(.circle)
-                                    }
-                                    //                                .sheet(isPresented: $isShowing) {
-                                    //                                    SideMenuView(isShowing: .constant(true))
-                                    //                                        .presentationDetents([.large])
-                                    //                                }
+                                    })
+                                    //                                    .sheet(isPresented: $showSideMenu) {
+                                    //                            //            SideMenuView(isShowing: )
+                                    //                                            .presentationDetents([.large])
+                                    //                                                                    }
                                     
                                     VStack(alignment: .center, spacing: 5, content: {
                                         Text("Welcome!")
@@ -153,7 +155,10 @@ struct TransactionsListView: View {
                     .navigationDestination(item: $selectedTransaction) { transaction in
                         EditTransactionView(editTransaction: transaction)
                     }
-                    
+                    //MARK:  SIDE MENU 
+                    SideMenuView(isShowing: $showSideMenu)
+                }
+            }
                     //MARK: SHOW DATE FILTER VIEW
                     .overlay {
                         if showFilterView {
@@ -169,33 +174,22 @@ struct TransactionsListView: View {
                     }
                     .animation(.snappy, value: showFilterView)
                 }
-            }
-                .overlay {
-                    if showSideMenu {
-                        SideMenuView(isShowing: $showSideMenu)
-                    }
-            }
         }
-            .transition(.move(edge: .leading))
-            .animation(.easeInOut, value: showSideMenu)
+        //MARK:  FUNCTIONS
+        func headerBGOpacity(_ proxy: GeometryProxy) -> CGFloat {
+            let minY = proxy.frame(in: .scrollView).minY + safeArea.top
+            return minY > 0 ? 0 : (-minY / 15)
         }
-    
-    //MARK:  FUNCTIONS
-    func headerBGOpacity(_ proxy: GeometryProxy) -> CGFloat {
-        let minY = proxy.frame(in: .scrollView).minY + safeArea.top
-        return minY > 0 ? 0 : (-minY / 15)
+        func headerScale(_ size: CGSize, proxy: GeometryProxy) -> CGFloat {
+            let minY = proxy.frame(in: .scrollView).minY
+            let screenHeight = size.height
+            
+            let progress = minY / screenHeight
+            let scale = (min(max(progress, 0), 1)) * 0.6
+            
+            return 1 + scale
+        }
     }
-    func headerScale(_ size: CGSize, proxy: GeometryProxy) -> CGFloat {
-        let minY = proxy.frame(in: .scrollView).minY
-        let screenHeight = size.height
-        
-        let progress = minY / screenHeight
-        let scale = (min(max(progress, 0), 1)) * 0.6
-        
-        return 1 + scale
-    }
-}
-
 
 #Preview {
     TransactionsListView()
