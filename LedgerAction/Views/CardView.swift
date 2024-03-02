@@ -70,6 +70,7 @@ struct CardView: View {
             }
             .background(.themeBG)
         }
+        .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }
 #Preview {

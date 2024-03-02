@@ -20,7 +20,7 @@ struct Expense_TrackerApp: App {
     @AppStorage("notificationAccess") private var isNotificationAccessGiven: NotificationState = .notDetermined
     var body: some Scene {
         WindowGroup {
-            TabBarView()
+            TransactionsListView()
                 /// Reloading Widgets
                 .onChange(of: scene, initial: true, { oldValue, newValue in
                     if newValue == .background {

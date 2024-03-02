@@ -42,6 +42,11 @@
 		124A342A2B847C58007707E0 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A34292B847C58007707E0 /* LoadingView.swift */; };
 		124A342C2B847D1B007707E0 /* NotificationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A342B2B847D1B007707E0 /* NotificationState.swift */; };
 		129EFFD92B92887600E6D4BC /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129EFFD82B92887600E6D4BC /* SideMenuView.swift */; };
+		129EFFDB2B92D1FA00E6D4BC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129EFFDA2B92D1FA00E6D4BC /* ContentView.swift */; };
+		129EFFDD2B92D61300E6D4BC /* SideMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129EFFDC2B92D61300E6D4BC /* SideMenuHeaderView.swift */; };
+		129EFFDF2B92EC9D00E6D4BC /* SideMenuRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129EFFDE2B92EC9D00E6D4BC /* SideMenuRowView.swift */; };
+		129EFFE12B92EFDC00E6D4BC /* SideMenuOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129EFFE02B92EFDC00E6D4BC /* SideMenuOptionModel.swift */; };
+		129EFFE32B930C5000E6D4BC /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129EFFE22B930C5000E6D4BC /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +106,11 @@
 		124A34292B847C58007707E0 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		124A342B2B847D1B007707E0 /* NotificationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationState.swift; sourceTree = "<group>"; };
 		129EFFD82B92887600E6D4BC /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		129EFFDA2B92D1FA00E6D4BC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		129EFFDC2B92D61300E6D4BC /* SideMenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuHeaderView.swift; sourceTree = "<group>"; };
+		129EFFDE2B92EC9D00E6D4BC /* SideMenuRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuRowView.swift; sourceTree = "<group>"; };
+		129EFFE02B92EFDC00E6D4BC /* SideMenuOptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionModel.swift; sourceTree = "<group>"; };
+		129EFFE22B930C5000E6D4BC /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +203,7 @@
 				124A34062B83FCF1007707E0 /* Category.swift */,
 				124A34082B83FD4D007707E0 /* Transaction.swift */,
 				124A342B2B847D1B007707E0 /* NotificationState.swift */,
+				129EFFE02B92EFDC00E6D4BC /* SideMenuOptionModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -213,6 +224,10 @@
 				124A34232B847999007707E0 /* SettingsView.swift */,
 				12090BC22B84F829007371F1 /* LockView.swift */,
 				129EFFD82B92887600E6D4BC /* SideMenuView.swift */,
+				129EFFDA2B92D1FA00E6D4BC /* ContentView.swift */,
+				129EFFDC2B92D61300E6D4BC /* SideMenuHeaderView.swift */,
+				129EFFDE2B92EC9D00E6D4BC /* SideMenuRowView.swift */,
+				129EFFE22B930C5000E6D4BC /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -375,6 +390,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				129EFFE12B92EFDC00E6D4BC /* SideMenuOptionModel.swift in Sources */,
 				124A34162B842B71007707E0 /* HapticsManager.swift in Sources */,
 				124A34202B8465CC007707E0 /* AddTransactionView.swift in Sources */,
 				124A34092B83FD4D007707E0 /* Transaction.swift in Sources */,
@@ -386,11 +402,15 @@
 				12090BC52B8505AA007371F1 /* Tab.swift in Sources */,
 				12090BC72B8661EF007371F1 /* EditTransactionView.swift in Sources */,
 				124A342A2B847C58007707E0 /* LoadingView.swift in Sources */,
+				129EFFE32B930C5000E6D4BC /* ProfileView.swift in Sources */,
+				129EFFDB2B92D1FA00E6D4BC /* ContentView.swift in Sources */,
+				129EFFDF2B92EC9D00E6D4BC /* SideMenuRowView.swift in Sources */,
 				124A33FB2B83EC56007707E0 /* BudgetView.swift in Sources */,
 				129EFFD92B92887600E6D4BC /* SideMenuView.swift in Sources */,
 				124A34182B84373D007707E0 /* CardView.swift in Sources */,
 				124A34052B83F9A0007707E0 /* TintColor.swift in Sources */,
 				12090BC92B86676F007371F1 /* TabShape.swift in Sources */,
+				129EFFDD2B92D61300E6D4BC /* SideMenuHeaderView.swift in Sources */,
 				124A33C32B83E637007707E0 /* TabBarView.swift in Sources */,
 				124A342C2B847D1B007707E0 /* NotificationState.swift in Sources */,
 				124A33FD2B83F132007707E0 /* IntroScreen.swift in Sources */,

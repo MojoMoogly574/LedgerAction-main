@@ -27,147 +27,159 @@ struct TransactionsListView: View {
         GeometryReader{
             let size = $0.size
             NavigationStack{
-                ScrollView(.vertical) {
-                    LazyVStack(spacing: 10, pinnedViews: [.sectionHeaders]) {
-                        //MARK: BODY
-                        Section {
-                            /// DATE RANGE FILTER BUTTON
-                            Button {
-                                showFilterView = true
-                                HapticManager.notification(type: .success)
-                            } label: {
-                                Text(" Select Range:  \(format(date: startDate,format: "dd MMM yy"))   -   \(format(date: endDate,format: "dd MMM yy"))")
-                                    .font(.callout)
-                                    .fontWeight(.bold)
-                                    .foregroundStyle(.black)
-                                    .padding(8)
-                            }
-                            .hSpacing(.leading)
-                           
-                            .background {///date range button rectangle
-                                RoundedRectangle(cornerRadius: 5, style: .continuous)
-                                    .fill(.colorTitanium)
-                                    .shadow(color: .primary, radius: 4, x: 2, y: 2)
-                            }
-                            .padding(.horizontal)
-                           Divider()
-                            FilterTransactionsView(startDate: startDate, endDate: endDate) { transactions in
-                                /// HEADER CARD VIEW
-                                CardView( 
-                                    income: total(transactions, category: .income),
-                                    expense: total(transactions, category: .expense), 
-                                    savings: total(transactions, category: .savings), 
-                                    investments: total(transactions, category: .investment)
-                                      )
-                                ///  CATEGORY SEGMENTED PICKER
-                                Picker("", selection: $selectedCategory) {
-                                    ForEach(Category.allCases, id: \.rawValue) { category in
-                                        Text("\(category.rawValue)")
-                                            .tag(category)
-                                    }
-                                }
-                                .padding(.horizontal, 5)
-                            }
-                            .pickerStyle(.segmented)
-                            Divider()
-                            FilterTransactionsView(startDate: startDate, endDate: endDate, category: selectedCategory) { transactions in
-                                ForEach(transactions) { transaction in
-                                    TransactionCardView(transaction: transaction)
-                                        .onTapGesture {
-                                            selectedTransaction = transaction
-                                        }
-                                }
-                            }
-                            .animation(.none, value: selectedCategory)
-                        } header: {
-                            //MARK:  HEADER VIEW
-                            HStack(spacing: 10) {
+                ZStack{
+                    ScrollView(.vertical) {
+                        LazyVStack(spacing: 10, pinnedViews: [.sectionHeaders]) {
+                            //MARK: BODY
+                            Section {
+                                /// DATE RANGE FILTER BUTTON
                                 Button {
-                                   showSideMenu = true
+                                    showFilterView = true
                                     HapticManager.notification(type: .success)
                                 } label: {
-                                    Image(systemName: "line.3.horizontal")
-                                        .font(.title3)
-                                        .fontWeight(.semibold)
-                                        .foregroundStyle(.white)
-                                        .frame(width: 45, height: 45)
-                                        .background(appTint.gradient, in: .circle)
-                                        .contentShape(.circle)
+                                    Text(" Select Range:  \(format(date: startDate,format: "dd MMM yy"))   -   \(format(date: endDate,format: "dd MMM yy"))")
+                                        .font(.callout)
+                                        .fontWeight(.bold)
+                                        .foregroundStyle(.black)
+                                        .padding(8)
                                 }
-                                .sheet(isPresented: $showSideMenu) {
-                                   SideMenuView()
-                                        .presentationDetents([.large])
+                                .hSpacing(.leading)
+                                
+                                .background {///date range button rectangle
+                                    RoundedRectangle(cornerRadius: 5, style: .continuous)
+                                        .fill(.colorTitanium)
+                                        .shadow(color: .primary, radius: 4, x: 2, y: 2)
                                 }
-                            
-                                VStack(alignment: .center, spacing: 5, content: {
-                                    Text("Welcome!")
-                                        .font(.title.bold())
-                                    if !userName.isEmpty {
-                                        Text(userName)
-                                            .font(.callout)
-                                            .foregroundStyle(.gray)
+                                .padding(.horizontal)
+                                Divider()
+                                FilterTransactionsView(startDate: startDate, endDate: endDate) { transactions in
+                                    /// HEADER CARD VIEW
+                                    CardView(
+                                        income: total(transactions, category: .income),
+                                        expense: total(transactions, category: .expense),
+                                        savings: total(transactions, category: .savings),
+                                        investments: total(transactions, category: .investment)
+                                    )
+                                    ///  CATEGORY SEGMENTED PICKER
+                                    Picker("", selection: $selectedCategory) {
+                                        ForEach(Category.allCases, id: \.rawValue) { category in
+                                            Text("\(category.rawValue)")
+                                                .tag(category)
+                                        }
                                     }
-                                })
+                                    .padding(.horizontal, 5)
+                                }
+                                .pickerStyle(.segmented)
+                                Divider()
+                                FilterTransactionsView(startDate: startDate, endDate: endDate, category: selectedCategory) { transactions in
+                                    ForEach(transactions) { transaction in
+                                        TransactionCardView(transaction: transaction)
+                                            .onTapGesture {
+                                                selectedTransaction = transaction
+                                            }
+                                    }
+                                }
+                                .animation(.none, value: selectedCategory)
+                            } header: {
+                                //MARK:  HEADER VIEW
+                                HStack(spacing: 10) {
+                                    Button {
+                                        showSideMenu.toggle()
+                                        HapticManager.notification(type: .success)
+                                    } label: {
+                                        Image(systemName: "line.3.horizontal")
+                                            .font(.title3)
+                                            .fontWeight(.semibold)
+                                            .foregroundStyle(.white)
+                                            .frame(width: 45, height: 45)
+                                            .background(appTint.gradient, in: .circle)
+                                            .contentShape(.circle)
+                                    }
+                                    //                                .sheet(isPresented: $isShowing) {
+                                    //                                    SideMenuView(isShowing: .constant(true))
+                                    //                                        .presentationDetents([.large])
+                                    //                                }
+                                    
+                                    VStack(alignment: .center, spacing: 5, content: {
+                                        Text("Welcome!")
+                                            .font(.title.bold())
+                                        if !userName.isEmpty {
+                                            Text(userName)
+                                                .font(.callout)
+                                                .foregroundStyle(.gray)
+                                        }
+                                    })
+                                    .visualEffect { content, geometryProxy in
+                                        content
+                                            .scaleEffect(headerScale(size, proxy: geometryProxy), anchor: .topLeading)
+                                    }
+                                    Spacer(minLength: 0)
+                                    Button {
+                                        addTransaction = true
+                                        HapticManager.notification(type: .success)
+                                    } label: {
+                                        Image(systemName: "plus")
+                                            .font(.title3)
+                                            .fontWeight(.semibold)
+                                            .foregroundStyle(.white)
+                                            .frame(width: 45, height: 45)
+                                            .background(appTint.gradient, in: .circle)
+                                            .contentShape(.circle)
+                                    }
+                                    .sheet(isPresented: $addTransaction) {
+                                        AddTransactionView()
+                                            .presentationDetents([.large])
+                                    }
+                                }
+                                .padding(.bottom, userName.isEmpty ? 10 : 5)
+                            }
+                            .ignoresSafeArea()
+                            .padding(.horizontal)
+                            .background {
+                                VStack(spacing: 0) {
+                                    Rectangle()
+                                        .fill(.clear)
+                                }
                                 .visualEffect { content, geometryProxy in
                                     content
-                                        .scaleEffect(headerScale(size, proxy: geometryProxy), anchor: .topLeading)
+                                        .opacity(headerBGOpacity(geometryProxy))
                                 }
-                                Spacer(minLength: 0)
-                                Button {
-                                    addTransaction = true
-                                    HapticManager.notification(type: .success)
-                                } label: {
-                                    Image(systemName: "plus")
-                                        .font(.title3)
-                                        .fontWeight(.semibold)
-                                        .foregroundStyle(.white)
-                                        .frame(width: 45, height: 45)
-                                        .background(appTint.gradient, in: .circle)
-                                        .contentShape(.circle)
-                                }
-                                .sheet(isPresented: $addTransaction) {
-                                    AddTransactionView()
-                                        .presentationDetents([.large])
-                                }
+                                .padding(.top, -(safeArea.top + 15))
                             }
-                            .padding(.bottom, userName.isEmpty ? 10 : 5)
-                        }
-                        .ignoresSafeArea()
-                        .padding(.horizontal)
-                        .background {
-                            VStack(spacing: 0) {
-                                Rectangle()
-                                    .fill(.clear)
-                            }
-                            .visualEffect { content, geometryProxy in
-                                content
-                                    .opacity(headerBGOpacity(geometryProxy))
-                            }
-                            .padding(.top, -(safeArea.top + 15))
                         }
                     }
-                }
-                .blur(radius:showFilterView ? 8 : 0)
-                .disabled(showFilterView)
-                .navigationDestination(item: $selectedTransaction) { transaction in
-                    EditTransactionView(editTransaction: transaction)
+                    .blur(radius:showFilterView ? 8 : 0)
+                    .disabled(showFilterView)
+                    .navigationDestination(item: $selectedTransaction) { transaction in
+                        EditTransactionView(editTransaction: transaction)
+                    }
+                    
+                    //MARK: SHOW DATE FILTER VIEW
+                    .overlay {
+                        if showFilterView {
+                            DateFilterView(start: startDate, end: endDate, onSubmit: {start, end in
+                                startDate = start
+                                endDate = end
+                                showFilterView = false
+                            }, onClose: {
+                                showFilterView = false
+                            })
+                            .transition(.move(edge: .leading))
+                        }
+                    }
+                    .animation(.snappy, value: showFilterView)
                 }
             }
-            .overlay {
-                if showFilterView {
-                    DateFilterView(start: startDate, end: endDate, onSubmit: {start, end in
-                        startDate = start
-                        endDate = end
-                        showFilterView = false
-                    }, onClose: {
-                        showFilterView = false
-                    })
-                    .transition(.move(edge: .leading))
-                }
+                .overlay {
+                    if showSideMenu {
+                        SideMenuView(isShowing: $showSideMenu)
+                    }
             }
-            .animation(.snappy, value: showFilterView)
         }
-    }
+            .transition(.move(edge: .leading))
+            .animation(.easeInOut, value: showSideMenu)
+        }
+    
     //MARK:  FUNCTIONS
     func headerBGOpacity(_ proxy: GeometryProxy) -> CGFloat {
         let minY = proxy.frame(in: .scrollView).minY + safeArea.top
