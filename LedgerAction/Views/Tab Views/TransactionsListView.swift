@@ -17,6 +17,7 @@ struct TransactionsListView: View {
     @State private var endDate: Date = .now.endOfMonth
     @State private var showFilterView: Bool = false
     @State private var addTransaction: Bool = false
+    @State private var showSideMenu: Bool = false
     @State private var selectedCategory: Category = .expense
     @State private var selectedTransaction: Transaction?
     /// For Animation
@@ -81,7 +82,24 @@ struct TransactionsListView: View {
                         } header: {
                             //MARK:  HEADER VIEW
                             HStack(spacing: 10) {
-                                VStack(alignment: .leading, spacing: 5, content: {
+                                Button {
+                                   showSideMenu = true
+                                    HapticManager.notification(type: .success)
+                                } label: {
+                                    Image(systemName: "line.3.horizontal")
+                                        .font(.title3)
+                                        .fontWeight(.semibold)
+                                        .foregroundStyle(.white)
+                                        .frame(width: 45, height: 45)
+                                        .background(appTint.gradient, in: .circle)
+                                        .contentShape(.circle)
+                                }
+                                .sheet(isPresented: $showSideMenu) {
+                                   SideMenuView()
+                                        .presentationDetents([.large])
+                                }
+                            
+                                VStack(alignment: .center, spacing: 5, content: {
                                     Text("Welcome!")
                                         .font(.title.bold())
                                     if !userName.isEmpty {

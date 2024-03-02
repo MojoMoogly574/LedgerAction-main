@@ -41,6 +41,7 @@
 		124A34282B847C12007707E0 /* ThemeChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A34272B847C12007707E0 /* ThemeChangeView.swift */; };
 		124A342A2B847C58007707E0 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A34292B847C58007707E0 /* LoadingView.swift */; };
 		124A342C2B847D1B007707E0 /* NotificationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A342B2B847D1B007707E0 /* NotificationState.swift */; };
+		129EFFD92B92887600E6D4BC /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129EFFD82B92887600E6D4BC /* SideMenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		124A34272B847C12007707E0 /* ThemeChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeChangeView.swift; sourceTree = "<group>"; };
 		124A34292B847C58007707E0 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		124A342B2B847D1B007707E0 /* NotificationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationState.swift; sourceTree = "<group>"; };
+		129EFFD82B92887600E6D4BC /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +212,7 @@
 				124A34212B8466FE007707E0 /* DateFilterView.swift */,
 				124A34232B847999007707E0 /* SettingsView.swift */,
 				12090BC22B84F829007371F1 /* LockView.swift */,
+				129EFFD82B92887600E6D4BC /* SideMenuView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				12090BC72B8661EF007371F1 /* EditTransactionView.swift in Sources */,
 				124A342A2B847C58007707E0 /* LoadingView.swift in Sources */,
 				124A33FB2B83EC56007707E0 /* BudgetView.swift in Sources */,
+				129EFFD92B92887600E6D4BC /* SideMenuView.swift in Sources */,
 				124A34182B84373D007707E0 /* CardView.swift in Sources */,
 				124A34052B83F9A0007707E0 /* TintColor.swift in Sources */,
 				12090BC92B86676F007371F1 /* TabShape.swift in Sources */,
