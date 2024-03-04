@@ -73,8 +73,11 @@ struct TransactionsListView: View {
                                 }
                                 .pickerStyle(.segmented)
                                 Divider()
+                                
+                                ///FILTER TRANSACTION VIEW
                                 FilterTransactionsView(startDate: startDate, endDate: endDate, category: selectedCategory) { transactions in
                                     ForEach(transactions) { transaction in
+                                        //TRANSACTION CARD VIEW
                                         TransactionCardView(transaction: transaction)
                                             .onTapGesture {
                                                 selectedTransaction = transaction
@@ -84,38 +87,32 @@ struct TransactionsListView: View {
                                 .animation(.none, value: selectedCategory)
                             } header: {
                                 //MARK:  HEADER VIEW
-                                HStack(spacing: 10) {
-                                    Button(action: {
-                                        showSideMenu.toggle()
-                                        HapticManager.notification(type: .success)
-                                    }, label: {
-                                        Image(systemName: "line.3.horizontal")
-                                            .font(.title3)
-                                            .fontWeight(.semibold)
-                                            .foregroundStyle(.white)
-                                            .frame(width: 45, height: 45)
-                                            .background(appTint.gradient, in: .circle)
-                                            .contentShape(.circle)
-                                    })
-                                    //                                    .sheet(isPresented: $showSideMenu) {
-                                    //                            //            SideMenuView(isShowing: )
-                                    //                                            .presentationDetents([.large])
-                                    //                                                                    }
-                                    
-                                    VStack(alignment: .center, spacing: 5, content: {
-                                        Text("Welcome!")
+                                HStack{
+                                    DrawerCloseButton(animation: animation)
+                                        .font(.title3)
+                                        .fontWeight(.semibold)
+                                        .foregroundStyle(.white)
+                                        .frame(width: 45, height: 45)
+                                        .background(appTint.gradient, in: .circle)
+                                        .contentShape(.circle)
+                                        .padding()
+                                        .offset(x: -25)
+                                    Spacer()
+                                    VStack(alignment: .center, content: {
+                                        Text("   Welcome!")
                                             .font(.title.bold())
+                                        
                                         if !userName.isEmpty {
                                             Text(userName)
                                                 .font(.callout)
                                                 .foregroundStyle(.gray)
                                         }
-                                    })
-                                    .visualEffect { content, geometryProxy in
-                                        content
-                                            .scaleEffect(headerScale(size, proxy: geometryProxy), anchor: .topLeading)
-                                    }
-                                    Spacer(minLength: 0)
+                                    })  .hSpacing(.leading)
+                                        .visualEffect { content, geometryProxy in
+                                            content
+                                                .scaleEffect(headerScale(size, proxy: geometryProxy), anchor: .center)
+                                        }
+                                    Spacer()
                                     Button {
                                         addTransaction = true
                                         HapticManager.notification(type: .success)
@@ -133,6 +130,7 @@ struct TransactionsListView: View {
                                             .presentationDetents([.large])
                                     }
                                 }
+                                .padding(.horizontal, 2)
                                 .padding(.bottom, userName.isEmpty ? 10 : 5)
                             }
                             .ignoresSafeArea()
@@ -155,42 +153,40 @@ struct TransactionsListView: View {
                     .navigationDestination(item: $selectedTransaction) { transaction in
                         EditTransactionView(editTransaction: transaction)
                     }
-                    //MARK:  SIDE MENU 
-                    SideMenuView(isShowing: $showSideMenu)
                 }
             }
-                    //MARK: SHOW DATE FILTER VIEW
-                    .overlay {
-                        if showFilterView {
-                            DateFilterView(start: startDate, end: endDate, onSubmit: {start, end in
-                                startDate = start
-                                endDate = end
-                                showFilterView = false
-                            }, onClose: {
-                                showFilterView = false
-                            })
-                            .transition(.move(edge: .leading))
-                        }
-                    }
-                    .animation(.snappy, value: showFilterView)
+            //MARK: SHOW DATE FILTER VIEW
+            .overlay {
+                if showFilterView {
+                    DateFilterView(start: startDate, end: endDate, onSubmit: {start, end in
+                        startDate = start
+                        endDate = end
+                        showFilterView = false
+                    }, onClose: {
+                        showFilterView = false
+                    })
+                    .transition(.move(edge: .leading))
                 }
-        }
-        //MARK:  FUNCTIONS
-        func headerBGOpacity(_ proxy: GeometryProxy) -> CGFloat {
-            let minY = proxy.frame(in: .scrollView).minY + safeArea.top
-            return minY > 0 ? 0 : (-minY / 15)
-        }
-        func headerScale(_ size: CGSize, proxy: GeometryProxy) -> CGFloat {
-            let minY = proxy.frame(in: .scrollView).minY
-            let screenHeight = size.height
-            
-            let progress = minY / screenHeight
-            let scale = (min(max(progress, 0), 1)) * 0.6
-            
-            return 1 + scale
+            }
+            .animation(.snappy, value: showFilterView)
         }
     }
+    //MARK:  FUNCTIONS
+    func headerBGOpacity(_ proxy: GeometryProxy) -> CGFloat {
+        let minY = proxy.frame(in: .scrollView).minY + safeArea.top
+        return minY > 0 ? 0 : (-minY / 15)
+    }
+    func headerScale(_ size: CGSize, proxy: GeometryProxy) -> CGFloat {
+        let minY = proxy.frame(in: .scrollView).minY
+        let screenHeight = size.height
+        
+        let progress = minY / screenHeight
+        let scale = (min(max(progress, 0), 1)) * 0.6
+        
+        return 1 + scale
+    }
+}
 
 #Preview {
-    TransactionsListView()
+    ContentView()
 }

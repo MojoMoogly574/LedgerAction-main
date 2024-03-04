@@ -316,5 +316,5 @@ struct EditTransactionView: View {
     }
 
 #Preview {
-    TabBarView()
+    SideMenuView()
 }

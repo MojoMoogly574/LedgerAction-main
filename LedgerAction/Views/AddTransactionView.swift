@@ -261,5 +261,5 @@ struct AddTransactionView: View {
     }
 }
 #Preview {
-    TabBarView()
+    SideMenuView()
 }

@@ -10,7 +10,7 @@ import WidgetKit
 import SwiftData
 import UserNotifications
 
-struct SettingsView: View {
+struct SettingsView1: View {
     /// User Properties
     @AppStorage("userName") private var userName: String = ""
     /// App Lock Properties
@@ -34,21 +34,21 @@ struct SettingsView: View {
     /// Alert Properties
     @State private var showAlert: Bool = false
     @State private var alertMessage: String = ""
+    
+    
+    
     var body: some View {
-        NavigationStack {
+        NavigationStack{
             List {
                 Section("User Name") {
                     TextField("iJustine", text: $userName)
                 }
-                
                 Section("App Lock") {
                     Toggle("Enable App Lock", isOn: $isAppLockEnabled)
-                    
                     if isAppLockEnabled {
                         Toggle("Lock When App Goes Background", isOn: $lockWhenAppGoesBackground)
                     }
                 }
-                
                 Section("App Tint") {
                     ScrollView(.horizontal) {
                         HStack(spacing: 15) {
@@ -73,21 +73,18 @@ struct SettingsView: View {
                         .padding(5)
                     }
                 }
-                
                 Section("Appearance") {
                     HStack(spacing: 0) {
                         Button("Change Theme") {
                             changeTheme.toggle()
                         }
-                        
                         Spacer()
-                        
                         Text(userTheme.rawValue)
                             .font(.caption2)
+                            .fontWeight(.bold)
                             .foregroundStyle(.gray)
                     }
                 }
-                
                 Section {
                     Toggle(isOn: $enableNotifications) {
                         Text("Enable Notifications")
@@ -110,64 +107,60 @@ struct SettingsView: View {
                         .font(.caption2)
                     }
                 }
-                
                 Section("Import & Export") {
                     Button("Import") {
                         presentFilePicker.toggle()
                     }
-                    
                     Button("Export", action: exportTransactions)
                 }
             }
-            .navigationTitle("Settings")
-        }
-        /// For Exporting Expneses as JSON File
-        .sheet(isPresented: $presentShareSheet) {
-            deleteTempFile()
-        } content: {
-            CustomShareSheet(url: $shareURL)
-        }
-        /// File Importer (For Selecting JSON File From Files App)
-        .fileImporter(isPresented: $presentFilePicker, allowedContentTypes: [.json]) { result in
-            switch result {
-            case .success(let url):
-                if url.startAccessingSecurityScopedResource() {
-                    importJSON(url)
-                } else {
-                    alertMessage = "Failed to access the File due to security reasons!"
+            /// For Exporting Expneses as JSON File
+            .sheet(isPresented: $presentShareSheet) {
+                deleteTempFile()
+            } content: {
+                CustomShareSheet(url: $shareURL)
+            }
+            /// File Importer (For Selecting JSON File From Files App)
+            .fileImporter(isPresented: $presentFilePicker, allowedContentTypes: [.json]) { result in
+                switch result {
+                case .success(let url):
+                    if url.startAccessingSecurityScopedResource() {
+                        importJSON(url)
+                    } else {
+                        alertMessage = "Failed to access the File due to security reasons!"
+                        showAlert.toggle()
+                    }
+                case .failure(let failure):
+                    alertMessage = failure.localizedDescription
                     showAlert.toggle()
                 }
-            case .failure(let failure):
-                alertMessage = failure.localizedDescription
-                showAlert.toggle()
             }
-        }
-        /// Alert View
-        .alert(alertMessage, isPresented: $showAlert) {  }
-        /// Loading View (Displaying when any Heavy task is happening in the background)
-        .overlay {
-            LoadingView(show: $isLoading)
-        }
-        /// Theme Picker
-        .preferredColorScheme(userTheme.colorScheme)
-        .sheet(isPresented: $changeTheme, content: {
-            ThemeChangeView(scheme: scheme)
+            /// Alert View
+            .alert(alertMessage, isPresented: $showAlert) {  }
+            /// Loading View (Displaying when any Heavy task is happening in the background)
+            .overlay {
+                LoadingView(show: $isLoading)
+            }
+            /// Theme Picker
+            .preferredColorScheme(userTheme.colorScheme)
+            .sheet(isPresented: $changeTheme, content: {
+                ThemeChangeView(scheme: scheme)
                 /// Since Max Height is 410
-                .presentationDetents([.height(410)])
-                .presentationBackground(.clear)
-        })
-        .toolbar(isLoading ? .hidden : .visible, for: .tabBar)
-        .onChange(of: enableNotifications, initial: true) { _, newValue in
-            if newValue {
-                UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { status, _ in
-                    enableNotifications = status
+                    .presentationDetents([.height(410)])
+                    .presentationBackground(.clear)
+            })
+            .onChange(of: enableNotifications, initial: true) { _, newValue in
+                if newValue {
+                    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { status, _ in
+                        enableNotifications = status
+                    }
+                } else {
+                    removeAllPendingNotifications()
                 }
-            } else {
-                removeAllPendingNotifications()
             }
-        }
+        }.toolbar(.hidden)
+        
     }
-    
     /// Importing JSON File and Adding to SwiftData
     func importJSON(_ url: URL) {
         isLoading = true
@@ -254,5 +247,5 @@ struct SettingsView: View {
 }
 
 #Preview {
-    TabBarView()
+    SettingsView1()
 }
